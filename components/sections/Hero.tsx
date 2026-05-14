@@ -49,13 +49,13 @@ export default function Hero() {
           
           <div className="mt-12 flex items-center space-x-6 text-sm text-muted-foreground">
             <div className="flex flex-col">
-              <span className="text-foreground font-bold text-xl">+15 años</span>
+              <span className="text-foreground font-bold text-xl">+40 años</span>
               <span>Experiencia</span>
             </div>
             <div className="w-px h-10 bg-border" />
             <div className="flex flex-col">
-              <span className="text-foreground font-bold text-xl">Soberanía</span>
-              <span>de Datos</span>
+              <span className="text-foreground font-bold text-xl">+300</span>
+              <span>Empresas</span>
             </div>
           </div>
         </motion.div>

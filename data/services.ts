@@ -1,4 +1,4 @@
-import { Building2, TrendingUp, Home, Scale, Globe, Smartphone, BrainCircuit } from 'lucide-react';
+import { Building2, TrendingUp, Home, Scale, Globe, Smartphone, BrainCircuit, ShoppingCart } from 'lucide-react';
 
 export const services = {
   blockA: {
@@ -41,9 +41,15 @@ export const services = {
       },
       {
         id: "apps",
-        title: "Ecosistemas Digitales (Apps y E-commerce)",
-        description: "Soluciones robustas de venta y gestión digital centradas en el usuario.",
+        title: "Aplicaciones Web y SaaS",
+        description: "Desarrollo de software a medida y herramientas de gestión en la nube.",
         icon: Smartphone,
+      },
+      {
+        id: "ecommerce",
+        title: "E-commerce y Tiendas Online",
+        description: "Plataformas de venta robustas con integración de pagos y logística.",
+        icon: ShoppingCart,
       },
       {
         id: "ai",

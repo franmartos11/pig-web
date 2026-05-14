@@ -41,7 +41,7 @@ export default function About() {
               
               <div className="space-y-6 text-primary-foreground/70 text-lg leading-relaxed">
                 <p>
-                  Con más de 15 años de trayectoria en el sector industrial y tecnológico, mi enfoque se centra en la profesionalización de empresas familiares y el fortalecimiento de sus capacidades organizativas.
+                  Con más de 40 años de trayectoria en el sector industrial y tecnológico, mi enfoque se centra en la profesionalización de empresas familiares y el fortalecimiento de sus capacidades organizativas.
                 </p>
                 <p>
                   Entendemos que la evolución empresarial hoy requiere una fusión indisoluble entre la arquitectura administrativa sólida y la soberanía tecnológica. No solo implementamos herramientas; diseñamos el futuro operativo de su organización.
