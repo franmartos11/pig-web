@@ -49,18 +49,24 @@ export default function Header() {
             <Link 
               key={link.name} 
               href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-accent transition-colors"
+              className="text-sm font-medium text-muted-foreground hover:text-accent transition-colors relative group"
             >
               {link.name}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all group-hover:w-full" />
             </Link>
           ))}
-          <Link 
-            href="#contacto"
-            className="px-5 py-2 bg-accent text-accent-foreground rounded-full text-sm font-semibold hover:opacity-90 transition-opacity flex items-center"
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            Primera consulta
-            <ChevronRight className="ml-1 w-4 h-4" />
-          </Link>
+            <Link 
+              href="#contacto"
+              className="px-5 py-2 bg-accent text-accent-foreground rounded-full text-sm font-semibold hover:opacity-90 transition-opacity flex items-center"
+            >
+              Primera consulta
+              <ChevronRight className="ml-1 w-4 h-4" />
+            </Link>
+          </motion.div>
         </nav>
 
         {/* Mobile Toggle */}

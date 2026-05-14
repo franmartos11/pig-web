@@ -9,7 +9,12 @@ export default function Benefits() {
     <section className="py-24 bg-background">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
             <h2 className="text-3xl md:text-5xl font-bold mb-8">¿Por qué elegir P&G?</h2>
             <p className="text-muted-foreground text-lg mb-12">
               Transformamos la complejidad administrativa en una ventaja competitiva, asegurando que tu empresa no solo crezca, sino que evolucione con seguridad.
@@ -35,9 +40,14 @@ export default function Benefits() {
                 </motion.div>
               ))}
             </div>
-          </div>
-
-          <div className="relative">
+          </motion.div>
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative"
+          >
             <div className="aspect-square bg-muted rounded-[40px] overflow-hidden border border-border">
               <img 
                 src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=2070" 
@@ -54,7 +64,7 @@ export default function Benefits() {
               <div className="text-3xl font-bold text-accent-foreground mb-1">ROI</div>
               <p className="text-xs font-bold uppercase tracking-widest text-accent-foreground/80">Optimizado</p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

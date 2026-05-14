@@ -14,34 +14,48 @@ const sectorIcons: Record<string, any> = {
 };
 
 export default function Sectors() {
-  // Double the sectors for seamless scroll
-  const scrollSectors = [...sectors, ...sectors];
+  // Triple the sectors for a much longer seamless scroll
+  const scrollSectors = [...sectors, ...sectors, ...sectors];
 
   return (
-    <section id="sectores" className="py-24 bg-muted/30 border-y border-border overflow-hidden">
-      <div className="container mx-auto px-6 mb-12 text-center">
-        <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-[0.2em] text-muted-foreground/50">
-          Experiencia Multisectorial
+    <section id="sectores" className="py-20 bg-black border-y border-white/5 relative overflow-hidden">
+      <div className="container mx-auto px-6 mb-16 text-center">
+        <h2 className="text-3xl md:text-6xl font-bold tracking-tight mb-4">
+          Liderazgo <span className="text-accent">Multisectorial</span>
         </h2>
+        <div className="w-24 h-1.5 bg-accent mx-auto" />
       </div>
 
-      <div className="relative flex overflow-hidden group">
-        <div className="flex animate-infinite-scroll whitespace-nowrap py-4">
+      {/* Infinite Scroll Container with Gradient Masks */}
+      <div className="relative flex items-center">
+        {/* Side Masks for Smooth Fading */}
+        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+
+        <div className="flex animate-infinite-scroll whitespace-nowrap hover:[animation-play-state:paused] transition-all">
           {scrollSectors.map((sector, index) => {
             const Icon = sectorIcons[sector] || Briefcase;
             return (
               <div 
                 key={`${sector}-${index}`}
-                className="flex items-center space-x-4 mx-12 text-muted-foreground hover:text-accent transition-colors cursor-default"
+                className="flex items-center space-x-6 mx-16 group cursor-default"
               >
-                <Icon className="w-8 h-8 opacity-40 group-hover:opacity-100 transition-opacity" />
-                <span className="text-2xl font-bold tracking-tight uppercase">
+                <div className="relative">
+                  <Icon className="w-10 h-10 text-muted-foreground/30 group-hover:text-accent transition-all duration-500 transform group-hover:scale-110" />
+                  <div className="absolute inset-0 bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                </div>
+                <span className="text-3xl md:text-4xl font-black tracking-tighter uppercase text-muted-foreground/20 group-hover:text-foreground transition-all duration-500">
                   {sector}
                 </span>
               </div>
             );
           })}
         </div>
+      </div>
+
+      {/* Subtle Background Text */}
+      <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 text-[12rem] font-black text-white/[0.02] whitespace-nowrap pointer-events-none select-none uppercase tracking-tighter">
+        Experiencia · Trayectoria · Resultados
       </div>
     </section>
   );
