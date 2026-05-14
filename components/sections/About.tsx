@@ -9,7 +9,7 @@ const LinkedinIcon = (props: any) => (
 
 export default function About() {
   return (
-    <section id="nosotros" className="py-20 bg-background overflow-hidden">
+    <section id="nosotros" className="py-12 lg:py-20 bg-background overflow-hidden">
       <div className="container mx-auto px-6">
         <motion.div 
           initial={{ opacity: 0, y: 40 }}

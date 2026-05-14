@@ -10,7 +10,7 @@ export default function Services() {
   const currentBlock = activeTab === 'A' ? services.blockA : services.blockB;
 
   return (
-    <section id="servicios" className="py-24 bg-background">
+    <section id="servicios" className="py-16 lg:py-24 bg-background">
       <div className="container mx-auto px-6">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}

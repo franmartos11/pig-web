@@ -8,7 +8,7 @@ const icons = [Search, PenTool, BarChart3];
 
 export default function Methodology() {
   return (
-    <section id="metodologia" className="py-24 bg-[#050505] relative overflow-hidden">
+    <section id="metodologia" className="py-16 lg:py-24 bg-[#050505] relative overflow-hidden">
       {/* Abstract background elements */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full opacity-10 pointer-events-none">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent to-transparent" />

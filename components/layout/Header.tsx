@@ -2,8 +2,12 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, ChevronRight } from 'lucide-react';
+import { Menu, X, ChevronRight, MessageCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+
+const LinkedinIcon = (props: any) => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+);
 
 const navLinks = [
   { name: 'Servicios', href: '#servicios' },
@@ -71,40 +75,64 @@ export default function Header() {
 
         {/* Mobile Toggle */}
         <button 
-          className="md:hidden text-foreground"
+          className="md:hidden text-foreground p-2"
           onClick={() => setIsOpen(!isOpen)}
         >
-          {isOpen ? <X /> : <Menu />}
+          {isOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
         </button>
       </div>
 
-      {/* Mobile Nav */}
+      {/* Mobile Nav Overlay */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 right-0 bg-background border-b border-border p-6 md:hidden"
+            initial={{ opacity: 0, x: '100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: '100%' }}
+            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+            className="fixed inset-0 z-50 bg-background md:hidden flex flex-col p-8"
           >
-            <div className="flex flex-col space-y-4">
-              {navLinks.map((link) => (
-                <Link 
-                  key={link.name} 
-                  href={link.href}
-                  className="text-lg font-medium py-2 border-b border-border/50"
-                  onClick={() => setIsOpen(false)}
+            <div className="flex justify-between items-center mb-16">
+              <div className="flex flex-col">
+                <span className="text-2xl font-black tracking-tighter">
+                  <span className="text-accent">P</span>&G
+                </span>
+                <span className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Consultores</span>
+              </div>
+              <button onClick={() => setIsOpen(false)} className="p-2">
+                <X className="w-8 h-8 text-foreground" />
+              </button>
+            </div>
+
+            <nav className="flex flex-col space-y-8">
+              {navLinks.map((link, i) => (
+                <motion.div
+                  key={link.name}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.1 + i * 0.1 }}
                 >
-                  {link.name}
-                </Link>
+                  <Link 
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className="text-4xl font-bold hover:text-accent transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
               ))}
-              <Link 
-                href="#contacto"
-                className="w-full py-4 bg-accent text-accent-foreground rounded-xl text-center font-bold"
-                onClick={() => setIsOpen(false)}
-              >
-                Primera consulta sin cargo
-              </Link>
+            </nav>
+
+            <div className="mt-auto border-t border-border pt-12 pb-8">
+              <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground mb-6">Conectemos</p>
+              <div className="flex items-center space-x-6">
+                <a href="#" className="p-4 bg-muted rounded-2xl text-accent hover:bg-accent hover:text-white transition-all">
+                  <LinkedinIcon className="w-6 h-6" />
+                </a>
+                <a href="https://wa.me/yournumber" target="_blank" rel="noopener noreferrer" className="p-4 bg-accent rounded-2xl text-white shadow-lg shadow-accent/20">
+                  <MessageCircle className="w-6 h-6" />
+                </a>
+              </div>
             </div>
           </motion.div>
         )}

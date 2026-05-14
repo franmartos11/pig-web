@@ -17,37 +17,38 @@ export default function Hero() {
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
+          className="text-center lg:text-left"
         >
           <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-bold uppercase tracking-widest mb-6">
             <Sparkles className="w-3 h-3" />
             <span>Consultoría B2B Córdoba</span>
           </div>
           
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-[1.1] md:leading-tight mb-6">
             Impulsamos la <span className="text-accent">evolución</span> de tu empresa
           </h1>
           
-          <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-xl">
+          <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-xl mx-auto lg:mx-0">
             Soluciones integrales en gestión empresarial, legal-administrativa e innovación digital. Estrategia y tecnología al servicio de tu crecimiento.
           </p>
           
-          <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+          <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 items-center lg:items-start justify-center lg:justify-start">
             <Link 
               href="#contacto"
-              className="px-8 py-4 bg-accent text-accent-foreground rounded-full font-bold text-lg hover:shadow-lg hover:shadow-accent/20 transition-all flex items-center justify-center group"
+              className="w-full sm:w-auto px-8 py-4 bg-accent text-accent-foreground rounded-full font-bold text-lg hover:shadow-lg hover:shadow-accent/20 transition-all flex items-center justify-center group"
             >
               Primera consulta sin cargo
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link 
               href="#servicios"
-              className="px-8 py-4 bg-transparent border border-border text-foreground rounded-full font-bold text-lg hover:bg-white/5 transition-all text-center"
+              className="w-full sm:w-auto px-8 py-4 bg-transparent border border-border text-foreground rounded-full font-bold text-lg hover:bg-white/5 transition-all text-center"
             >
               Ver servicios
             </Link>
           </div>
           
-          <div className="mt-12 flex items-center space-x-6 text-sm text-muted-foreground">
+          <div className="mt-12 flex items-center justify-center lg:justify-start space-x-6 text-sm text-muted-foreground">
             <div className="flex flex-col">
               <span className="text-foreground font-bold text-xl">+40 años</span>
               <span>Experiencia</span>

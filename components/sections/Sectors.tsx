@@ -18,7 +18,7 @@ export default function Sectors() {
   const scrollSectors = [...sectors, ...sectors, ...sectors];
 
   return (
-    <section id="sectores" className="py-20 bg-black border-y border-white/5 relative overflow-hidden">
+    <section id="sectores" className="py-12 lg:py-20 bg-black border-y border-white/5 relative overflow-hidden">
       <div className="container mx-auto px-6 mb-16 text-center">
         <h2 className="text-3xl md:text-6xl font-bold tracking-tight mb-4">
           Liderazgo <span className="text-accent">Multisectorial</span>
@@ -54,7 +54,7 @@ export default function Sectors() {
       </div>
 
       {/* Subtle Background Text */}
-      <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 text-[12rem] font-black text-white/[0.02] whitespace-nowrap pointer-events-none select-none uppercase tracking-tighter">
+      <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 text-[5rem] lg:text-[12rem] font-black text-white/[0.02] whitespace-nowrap pointer-events-none select-none uppercase tracking-tighter">
         Experiencia · Trayectoria · Resultados
       </div>
     </section>
